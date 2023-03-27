@@ -39,15 +39,7 @@ main, section, article {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.502);
 }
 
-footer {
-    display: block;
-    width: 100vw;
-    background-color: #291f6c;
-    color: white;
-    text-align: center;
-    margin-top: auto;
-    padding: 5px;
-}
+
 
 p {
     text-align: justify;
@@ -224,4 +216,31 @@ input[type=radio] + label, input[type=checkbox] + label {
     display: inline-block;
     font-size: 1em;
     background-color: rgba(0, 0, 0, 0);
+}
+
+footer {
+    background-color: #291f6c;
+         display: block;
+
+   
+    width: 100vw;
+    color: white;
+    text-align: center;
+    margin-top: auto;
+    padding: 5px;
+}
+
+a {
+   
+    display: block;
+    width: 100vw;
+    color: white;
+    background-color: #291f6c;
+    text-align: center;
+    margin-top: auto;
+    padding: 5px;
+}
+a:hover{
+    color:#ea912a
+
 }
