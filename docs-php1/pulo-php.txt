@@ -1,0 +1,56 @@
+  Dicas e truques HTML,css, javascript
+
+------------------------------------
+
+quando não aprecer numero no input.
+O erro que você está enfrentando ocorre porque a função number_format espera que o primeiro argumento seja um número de ponto flutuante (float), mas quando o parâmetro n não é fornecido na URL, o valor padrão é definido como uma string ("Sem número").
+
+Uma maneira de resolver esse problema é garantir que o valor padrão seja do tipo float, para que a função number_format.
+
+  $real =$_GET["din"] ?? 0; trocar por 
+  $nome = isset($_GET["nome"]) && $_GET["nome"] !== "" ? $_GET["nome"] : 0.0;
+
+------------------------------------
+      
+
+*para a caixa de numeros aceirar numeros após a vírgula deve usar o comando step
+
+  <input type="number" name="n" id="n" step="0.001">
+
+---------------------------------------
+
+*para formatar o numero 1,254,24
+
+".number_format($nun, 3, ".", ".") ."
+####################################################################################
+Criar um formulário retro alimentado
+
+ <?php 
+    //capturando os dados do formulário Retroalimentado
+        $valor1 = $_GET['v1'] ?? 0;
+        $valor2 = $_GET['v2'] ?? 0;
+    ?>
+
+    <main>
+        <h1>Somador de Valores</h1>
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+    <label for="v1">Valor 1</label>
+    <input type="number" name="v1" id="v1" value="<?=$valor1 ?>">
+    <label for="v2">Valor</label>
+    <input type="number" name="v2" id="v2" value="<?=$valor2?>">
+    <input type="submit" value="Somar">
+    </form>
+    </main>
+
+
+    <section id="resultado">
+    <h2>Resultado da Soma</h2> 
+    <?php 
+    $soma=$valor1+$valor2;
+    echo "<p>A soma entre os valores $valor1 e $valor2 é igual a <strong>$soma</strong></P>"
+    ?>
+    </section>
+    </body>
+####################################################################################
+
+

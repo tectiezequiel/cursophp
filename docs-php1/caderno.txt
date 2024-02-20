@@ -1,0 +1,240 @@
+Caderno PHP
+########################################################################################################################
+Inicial
+########################################################################################################################
+Para colocar unicod cod. Emuji
+ 	\u{}
+	\u{1f30e}
+	\u{1f303}
+------------------------------------------------------------------------------------------------------------------------
+<? PHP 	?> -----> 	super tag php
+<?	?> ----->	Asp tag
+<? php echo "curso em vídeo"?>
+<? =	?> ----->	short tag php
+------------------------------------------------------------------------------------------------------------------------
+
+<?php 
+echo "hoje é dia " . date('d/m/Y') . "<br>";	resp:	hoje é dia 18/02/2024
+echo "e a hora atual é " . date('H:i:s')."<br>";resp: 	e a hora atual é 13:45:22
+date_default_timezone_set("America/Sao_Paulo");	
+echo "essa hora atual é " . date('g:i:s e');//gmt-3//	resp: 	essa hora atual é 9:45:22 America/Sao_Paulo
+?>
+
+########################################################################################################################
+Comentario 
+em html   
+</pre>
+<!--/pre-->
+em php 
+//
+-------------------------------------------------------------------------------------------------------------
+Comando
+*comando para alterar as tag´s segura "alt" e seleciona
+*Comando Para colocare a coluna inteira para direita ou esquerda 
+"Seleciona +shit+tab ou seleciona +tab"
+*Para mudar ou apagar uma letra ao mesmo tempo basta segurar o "alt" e clicar aonde vc deseja alterar. 
+
+########################################################################################################################
+Variavel & Constante	Sempre será declada no servidor.
+Variavel
+$nome=var
+$sobre nome=Var
+$nome="ezequiel";
+$sobrenome="chioquetta";
+
+echo "muito prazer $nome $sobrenome";
+------------------------------------------------------------------------------------------------------------------------
+Constante
+Cont PAIS="Brasil"
+	echo "Muito prazer, $nome.$sobrenome; você mora no".PAIS;
+
+$sobrenome="Guanabara";
+$idade = 43;
+$peso =118.5;
+$casado=Falso;
+########################################################################################################################
+Regras para nomes identificadores
+
+1. Variável sempre começam com o símbolo.$
+2. O segundo pode ser letra ou simbolo_
+3. Aceita caracteres [a-z], [A-Z],[0-9],e[_],
+4. Aceita caracteres da tabela ASCH a partir de 128.
+5. Aceita caracteres acentesados como á,ô,ç
+6. A limguangem é case sensiteve em relação aos nomes.
+7. Nomes especiais como $This não podem ser usados.
+------------------------------------------------------------------------------------------------------------------------
+	Recomendação para nomes
+1. Tente dar nomes claros e de fácil identificação.
+2. Evite nomes muito curtos ou muito longas.
+3. Define um padrão e siga em todos o projetos.
+4. Para variável, dê preferência a letras minusculos.
+5. Para constante, dê preferência a letra maiusculas.
+6. Use canel case para métados e atributos. $nomeCompletoCliente="camel case";
+7. Use Snake_case para nomear contantes.
+
+	$telefone_contato_fornecedor= "Snake Case";
+quer dizer tudo em mínusculo e separado por _ anderline.
+
+	"canel case"
+ Tem letras maiúsculas e minúsculas.
+
+########################################################################################################################]
+Tipos primitivos escalar
+
+ $sobrenome/ silva -> string
+
+	String
+ Sequência de letras, números e simbolos, Sempre representados entre aspas.
+
+ $idade /34 ->int ou interger
+
+	Interger
+ Um valor numérico inteiro, quele que vem sera a parte decimal.
+ $peso /85.9 -> float, double ou real 
+ Float , double
+
+ Um valor numérico Real, que vem com a parte decimal, depois do ponto flutuante.
+
+ $casado /true -> bool ou boolean 
+
+	Bool ou booleam 
+ Um valor lógico ou booleano, que aceito apenas os valores verdadeiros ou falso(true ou false).
+
+ ->"RJ" string		 
+ -> 3.1995 double
+ ->17 int
+ ->true bool
+ ->""string
+ ->19 int
+ ->"false! string
+ ->0x1a int
+ ->3 e 2 double
+ ->"1024" string
+
+
+	0 x=Hexadecimal
+	0 b=binario
+	0 =Octal
+	$num =010;
+	echo "o valor de varialvel é $num";
+########################################################################################################################]
+
+Comando Var_dump($v);
+	$v=45.2
+ ele vai despejar a informação da variavel
+
+	Coeção
+	
+ Forma de força a variavel, para os tipos pri qu voçê quiser.
+ Para uma variavel bool se escrever 
+		0 - False - Vazia
+		1 - Verdadeiro - cheio.
+------------------------------------------------------------------------------------------------------------------------
+
+	compostos	especias
+ 	-> array	->null
+	-> object	->resource    ->Pode usar para todos os tipos primitivos escalar.
+			->callabe
+			->mixed
+	
+	    v
+	    v
+ $VET=[6,2.5,."maria",3,false];
+ Pode usar varias opções.
+------------------------------------------------------------------------------------------------------------------------
+ Quatro formatos de strings
+	double quated
+	single quated
+	heredoc
+	nowdoc
+
+------------------------------------------------------------------------------------------------------------------------
+
+ "curso". "php"  ->concatenation operator
+"  " -> existe interpretação do conteúdo
+------------------------------------------------------------------------------------------------------------------------
+ Para mostrar uma constante;
+ Cont ESTADO ="RJ"; 
+ 
+
+########################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+########################################################################################################################
+Superglobais do PHP
+
+$_get
+
+$_post
+
+$_Request
+
+$_Cookis
+
+$_Files
+
+$_Session
+
+$_Server
+
+$_globals
+########################################################################################################################
+Php_self
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

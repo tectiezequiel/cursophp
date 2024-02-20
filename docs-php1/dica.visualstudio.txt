@@ -1,0 +1,7 @@
+
+html 
+
+--
+procedimento para configurar o visul studio -  
+https://github.com/gustavoguanabara/html-css/blob/master/aulas-pdf/04%20-%20Primeiros%20passos%20HTML.pdf
+~--
