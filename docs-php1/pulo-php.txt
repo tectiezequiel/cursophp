@@ -23,6 +23,12 @@ Uma maneira de resolver esse problema é garantir que o valor padrão seja do ti
 
 ".number_format($nun, 3, ".", ".") ."
 ####################################################################################
+
+comando para não deixar a caixa vazia (required) ex.
+
+<input type="number" name="v1" id="v1" required  value="<?=$valor1 ?>">
+
+---------------------------------------
 Criar um formulário retro alimentado
 
  <?php 
@@ -51,6 +57,29 @@ Criar um formulário retro alimentado
     ?>
     </section>
     </body>
+####################################################################################
+$aumenta = $preco * $reaj/100;
+
+Neste caso, $reaj é a porcentagem do aumento.
+A expressão $preco * $reaj/100 calcula a quantidade do aumento diretamente multiplicando o preço ($preco) pela porcentagem do aumento ($reaj) dividida por 100.
+Essa abordagem é direta e eficaz quando você tem a porcentagem do aumento diretamente disponível.
+$aumento = $preco * (1 + $reaj / 100);
+
+Neste caso, $por é a porcentagem do aumento.
+A expressão 1 + $por / 100 calcula o fator pelo qual o preço será multiplicado para incluir o aumento. Por exemplo, se $por for 10, então 1 + $por / 100 resultará em 1.1, que é equivalente a um aumento de 10%.
+Em seguida, o preço original ($preco) é multiplicado pelo fator calculado para obter o novo preço após o aumento.
+Essa abordagem é útil quando você precisa calcular o novo preço diretamente a partir da porcentagem de aumento.
+Em resumo, ambas as abordagens são válidas para calcular o aumento de preço com base em uma porcentagem, mas elas diferem na maneira como a porcentagem é aplicada ao preço original. A segunda abordagem é mais flexível e pode ser útil em situações em que você precisa calcular o novo preço com base em uma porcentagem relativa ao preço original.
+####################################################################################
+
+
+Para redimensionar a imagem diretamente na linha em que você a exibe, você pode usar o atributo width na tag <img>. Isso não alterará o tamanho do arquivo em si, mas apenas a exibição da imagem na página. Aqui está como você pode fazer isso:
+
+php
+Copy code
+echo "<li> <img src=\"../desafio13/100.png\" alt=\"100\" width='100'> gg <strong>{}</strong></li>";
+Neste exemplo, o atributo width foi definido como 100, o que fará com que a largura da imagem seja reduzida para 100 pixels. Isso reduzirá o tamanho da imagem exibida na página, mas não alterará o tamanho do arquivo de imagem original.
+
 ####################################################################################
 
 

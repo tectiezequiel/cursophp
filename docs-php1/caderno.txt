@@ -32,7 +32,8 @@ Comando
 *comando para alterar as tag´s segura "alt" e seleciona
 *Comando Para colocare a coluna inteira para direita ou esquerda 
 "Seleciona +shit+tab ou seleciona +tab"
-*Para mudar ou apagar uma letra ao mesmo tempo basta segurar o "alt" e clicar aonde vc deseja alterar. 
+*Para mudar ou apagar uma letra ao mesmo tempo basta segurar o "alt" e clicar aonde vc deseja alterar.
+*Atalho para copy e colar em baixo varias vezes é Crtr -shift seta para baixo.
 
 ########################################################################################################################
 Variavel & Constante	Sempre será declada no servidor.

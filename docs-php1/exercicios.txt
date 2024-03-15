@@ -153,3 +153,349 @@ numero.php
         </body>
         </html>
 ########################################################################################################################
+desafio 6
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 6</title>
+    <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+    <?php 
+    //capturando os dados do formulário Retroalimentado
+        $divisor = $_GET['v1'] ?? 0;
+        $dividendo = $_GET['v2'] ?? 1;
+    ?>
+    <main>
+        <h1>Anatomia de um Divisor</h1>
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+    <label for="v1">Divisor</label>
+    <input type="number" name="v1" id="v1"  step="0.001" min=0 value="<?=$divisor ?>">
+    <label for="v2">Dividendo</label>
+    <input type="number" name="v2" id="v2"  step="0.001" min=1 value="<?=$dividendo?>">
+    <input type="submit" value="Analisar">
+    </form>
+    </main>
+    
+    
+    <article id="resultado">
+    <h2>Resultado da Analisar</h2> 
+    <?php    
+    $resto= intdiv($divisor,$dividendo,);
+    $lixo= $divisor % $dividendo;
+    
+    echo "<ul>";
+    
+    echo "<li>Divisor $divisor</li>";
+    echo "<li>dividendo $dividendo</li>";
+    echo "<li>Valor da divisão $resto</li>";
+    echo "<li>Valor da divisão sem o resto $lixo </li>";
+    echo "</ul>";
+    ?>
+    </article>
+    
+    <section id="resultado2">
+    <h2>Resultado da Analisar</h2>
+
+        <table class=divisao>
+        <tr>
+        <td><?=$divisor?></td>
+        <td><?=$dividendo?></td>
+            
+        </tr>
+        <tr>
+        <td><?=$lixo?></td>
+        <td><?=$resto?></td>
+        </tr>    
+        </table>
+    </section >
+    <footer>
+    <a href="http://localhost/cursophp/desafio6/" class="btn">Voltar</a>
+    </footer>
+    </body>
+    </html>
+  ########################################################################################################################
+Desafio 7
+
+<body>
+    <?php 
+    $minimo=1380.00;
+    $salario = $_GET['sal'] ?? $minimo;
+    $valor= intdiv($salario, $minimo);
+    $resto=$salario% $minimo;
+
+    ?>
+
+  <main>
+    <h1>Informe seu salário</h1>
+
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+    <input type="number" name="sal" id="sal" step="0.001"   value="<?=$sal ?>">
+    <label for="sal">Salario (R$)</label>
+     <input type="submit" value="Calcular">
+    <label for="sal">Considerando o salário minimo de<strong>
+        R$<?= number_format($minimo,2,".",".")?></strong></label> 
+    </form>
+  </main> 
+  <section id="resultado"> 
+  <h2>Resultado final</h2>
+
+  <?php 
+  echo "<p>Quem recebe o valor de R\$". number_format($salario,2,",",".")." ganha <strong>$valor salarios minimos</strong> + R\$".number_format ($resto, 2,",",".")." .</p>";
+  ?>
+  </section>
+  <footer>
+    <a href="http://localhost/cursophp/desafio7/" class="btn">Voltar</a>
+    </footer>
+
+</body>  
+ ########################################################################################################################
+Desafio 8
+<body>
+<main>
+<?php 
+$numero = $_GET['num'] ?? 0;
+$raiz =sqrt($numero);
+$cubica= $numero **(1/3);
+?> 
+<header>    
+<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+<strong>Informe um número</strong>
+<label for="num"> <strong>Número</strong></label> 
+<input type="number" name="num" id="num"  step="0.001" <?= number_format($numero,2,".",".")?>  value="<?=$num ?>">
+<input type="submit" value="Calcular">
+
+</form></main> </header> 
+
+<article id="resultado">
+    <?php 
+echo "<strong>O valor para ser Calculado é $numero </strong>
+é 
+<ul><li> O valor da raiz quadrada é". number_format($raiz,3,",",".") . ",</li>
+<li>O valor da raiz cubico é </strong> ".number_format ($cubica, 3,",",".")." .</p></li></ul>"
+    ?>
+</article>
+    
+########################################################################################################################
+Desafio 9  média artimédica e m ponderada 
+
+<body>
+
+<?php 
+$val1 = $_GET['valor1'] ?? 1 ;
+$val2 = $_GET['valor2'] ?? 1;
+$pes1 = $_GET['peso1'] ?? 1;
+$pes2 = $_GET['peso2'] ?? 1;
+
+$medari=($val1+$val2)/2;
+$media_ponderada = ($val1 * $pes1 + $val2 * $pes2) / ($pes1 + $pes2);
+?>
+
+<main> 
+<h1>Media Aritmédicas</h1>    
+<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+<label for="valor1">1º Valor</label>
+<input type="number" name="valor1" id="valor1" step="0.001" min="0" max="10" required value="<?=$val1?>">
+
+<form action="<? echo $_SERVER['PHP_SELF']?>" method="get">
+<label for="peso1">1º Peso</label>
+<input type="number" name="peso1" id="peso1" step="0.001"  min="0" max="10" required  value="<?=$pes1?>">
+
+
+<form action="<? echo $_SERVER['PHP_SELF']?>" method="get">
+<label for="valor2">2º Valor</label>
+<input type="number" name="valor2" id="valor2" step="0.001"   min="0" max="10" required   value="<?=$val2?>">
+
+<form action="<? echo $_SERVER['PHP_SELF']?>" method="get">
+<label for="peso2">2º Peso</label>
+<input type="number" name="peso2" id="peso2" step="0.001"  min="0" max="10" required  value="<?=$pes2?>">
+
+<input type="submit" value="Calcular">
+</form>
+ 
+<section id="resposta">
+<h1>Calculo das Médias</h1>
+
+
+
+<?php 
+echo "<p>Analisando os valores $val1 e $val2 </p>";
+
+echo "<ul><li><p>A <strong>média Aritmédica Simples</strong> entre os valores é igual $medari</p></li>";
+echo "<li><p>A <strong>média Aritmética Ponderada</strong> com os pesos $pes1 e $pes2 
+é ".number_format($media_ponderada,3,".",".")." </p></li></ul>";
+?>
+</section>
+</main>  
+<footer>
+    <a href="http://localhost/cursophp/desafio9/" class="btn">Voltar</a>
+    </footer>
+
+</body>
+</html>
+---------------------------------------------------------------------------------
+desafio 11 -meu e chatgbt
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 11</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    
+<main>
+    <h1 style="color:blue">Reajustado de preço</h1>
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+    <label for="preco">Preço do produto</label>
+    <input type="number" name="preco" id="preco" step="0.01" required value="<?=$pc ?>">
+
+    <label for="prorcentagem">Qual será o percentual de reajuste? (<span id="porcentagem"></span>%)</label></label>
+    <input type="range" name="prorcentagem" id="prorcentagem" min="0" max="100" step="1" oninput="atualizarPorcentagem(this.value)" value="<?=$por ?? '' ?>">
+    <input type="submit" value="Calcular">
+    
+    <h2>Resultado do Reajuste</h2>
+    <section id=motor>  
+        <?php 
+
+        $pc = $_GET['preco'] ?? 0;
+        $por= $_GET['prorcentagem'] ?? 0;  
+        //$Rest=($pc*$por)/100;
+        $Rest= $pc * (1 + $por / 100);
+        ?>
+    
+    <?php 
+    echo "O produto que custava $pc com o de aumento  de $por% vai passar custar ". number_format($Rest,3,",",".")."  a partir de agora. ";
+    ?>  
+        
+        <script>
+        function atualizarPorcentagem(valor) {
+        document.getElementById("porcentagem").innerText = valor;
+        }
+        </script>
+
+        </section>  
+        <a href="http://localhost/cursophp/desafio11/" class="btn">Voltar</a>
+        </main>
+
+</body>
+</html>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+desafio 11 guanabara
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 11</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+        <?php 
+        $preco = $_GET['preco'] ?? 0;
+        $reaj=$_GET['reaj'] ?? 0; 
+        ?> 
+<main>
+    <h1 style="color:blue">Reajustado de preço</h1>
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+    <label for="preco">Preço do produto</label>
+    <input type="number" name="preco" id="preco" step="0.01" required value="<?=$pc ?>">
+
+    <label for="reaj">Qual será o percentual de reajuste? (<span id="p"></span>%)</label></label>
+    <input type="range" name="reaj" id="reaj" min="0" max="100" step="1" oninput="mudaValor()" value="<?=$reaj?>">
+    <input type="submit" value="Reajustar">
+    
+    
+    <section id=motor>  
+        <?php 
+
+      
+        $aumenta=$preco*$reaj/100;
+        $novo=$preco+$aumenta;
+        ?>
+    </section>
+    <h2>Resultado do Reajuste</h2>
+    <?php 
+    echo "O produto que custava $preco com o de aumento  de $reaj% vai passar custar ". number_format($novo,3,",",".")."  a partir de agora. ";
+    ?>  
+        </main>
+
+        <script>
+            //Declarações automáticas
+        mudaValor() 
+
+        function mudaValor() {
+            p.innerText = reaj.value;
+        }
+       
+        </script>
+   
+        <footer>
+        <a href="http://localhost/cursophp/desafio11/" class="btn">Voltar</a>
+        </footer>
+      
+</body>
+</html>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+desafio 12 Meu
+<body>
+<main>
+<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+    <h1>Calculadora do tempo</h1>
+    <label for="tempo">Qual é o total de segundos</label>    
+    <input type="number" name="tempo" id="tempo" required value="<?=$tempo?>">
+    <input type="submit" value="tempo">
+
+
+</form>
+
+<?php 
+        
+        $tempo = $_GET['tempo'] ?? 0;
+        
+        $sobra=$tempo;
+        // Total de semanas
+        $semana =(int)($sobra /604_800 );
+        $sobra= $sobra % 604_800;
+        // Total dias
+        $dias = (int)($sobra/84_400);
+        $sobra= $sobra%86_400;
+        // total de horas
+        $horas =(int)($sobra/3_600);
+        $sobra= $sobra%3_600;
+        //total de minutos
+        $minuto=(int)($sobra/60);
+        $sobra= $sobra%60;
+        //total de segundos 
+        $seg=$sobra;
+        ?> 
+
+
+<section id="resposta">
+    <?php 
+    echo "<h2>Totalizando tudo</h2>";
+    echo "Analizando o valor que você digitou ". number_format($tempo,3,",",".")." <strong>segundos</strong> equivalem <br>um total de:";
+    echo " <table><ul><li>$mes <strong> Mês se tiver 4 semanas completas ou 30 dias</strong></li>";
+    echo "<li> $semana <strong>Semanas</strong></li>";
+    echo "<li>$dias <strong>Dias</strong></li>";
+    echo "<li>$horas <strong>Horas</strong></li>";
+    echo "<li>$minuto <strong>Minutos</strong> </li>";
+    echo "<li>$seg <strong>Segundos</strong></li></ul>";
+
+    ?>
+</section>
+
+<a href="http://localhost/cursophp/desafio12/" class="btn">Voltar</a>
+
+</main>    
+</body>
+</html>
+####################################################################################################
+
+
+
+
